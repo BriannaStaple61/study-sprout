@@ -1,0 +1,158 @@
+/* The page and its cozy colors. */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #edf4e9;
+  background-image: radial-gradient(#cedfc7 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: #294735;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 16px;
+}
+/* A brief ivory-and-sage welcome, isolated from the tracker styles. */
+.loading-screen {
+  position: fixed; inset: 0; z-index: 10;
+  display: grid; place-items: center; padding: 24px;
+  background: radial-gradient(ellipse at center, #fffdf6, #eee7dc);
+  color: #62564c; text-align: center;
+  opacity: 1; transition: opacity .3s ease;
+  pointer-events: none;
+}
+.loading-screen[hidden] { display: none; }
+.loading-screen.is-leaving { opacity: 0; }
+.loading-content { width: min(100%, 380px); }
+.loading-brand { font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; color: #64765a; }
+#loading-message { margin: 12px 0; font: bold 1.8rem/1.4 Georgia, serif; }
+.loading-caption { font-size: .95rem; margin: 0 0 24px; }
+.loading-sprout {
+  position: relative; width: 120px; height: 140px; margin: 0 auto 26px;
+  transform-origin: bottom center; animation: sprout-sway 1.8s ease-in-out infinite;
+}
+.loading-stem { position: absolute; width: 6px; height: 68px; background: #728969; border-radius: 8px; left: 57px; top: 18px; }
+.loading-leaf { position: absolute; width: 45px; height: 27px; background: #a6b49a; border: 2px solid #728969; }
+.loading-leaf-left { left: 15px; top: 33px; border-radius: 4px 30px; transform: rotate(12deg); }
+.loading-leaf-right { left: 60px; top: 15px; border-radius: 30px 4px; transform: rotate(-12deg); }
+.loading-pot { position: absolute; left: 26px; bottom: 0; width: 68px; height: 60px; border: 3px solid #ab9580; border-top-width: 9px; border-radius: 5px 5px 23px 23px; background: #d9c5ae; color: #62564c; font: bold 30px/42px Georgia, serif; }
+.loading-dots { display: flex; justify-content: center; gap: 9px; }
+.loading-dots span { width: 7px; height: 7px; border-radius: 50%; background: #879c7a; animation: dot-pulse 1.2s ease-in-out infinite; }
+.loading-dots span:nth-child(2) { animation-delay: .15s; }
+.loading-dots span:nth-child(3) { animation-delay: .3s; }
+@keyframes sprout-sway { 50% { transform: translateY(-5px) rotate(3deg); } }
+@keyframes dot-pulse { 50% { opacity: .35; transform: translateY(-3px); } }
+.pet-card {
+  width: 100%; max-width: 450px; padding: 34px 30px 22px;
+  text-align: center; background: #fffef8;
+  border: 2px solid #d4e2cb; border-radius: 28px;
+  box-shadow: 0 14px 0 #dce8d5, 0 24px 50px #29473512;
+}
+.eyebrow { font-size: .75rem; letter-spacing: .14em; font-weight: bold; }
+h1 { font-family: Georgia, serif; font-size: 2.5rem; margin: 16px 0 10px; }
+h2 { font-size: 1.5rem; margin: 4px 0; }
+p { line-height: 1.5; }
+.garden { position: relative; height: 245px; margin-top: 18px; overflow: hidden; }
+.plant { position: absolute; width: 160px; height: 220px; left: calc(50% - 80px); bottom: 10px; transform-origin: bottom center; }
+.stem { position: absolute; background: #428450; width: 9px; height: 120px; left: 76px; top: 15px; border-radius: 10px; }
+.leaf { position: absolute; width: 66px; height: 40px; background: #75ae57; border: 3px solid #428450; }
+.leaf-left { left: 14px; top: 32px; border-radius: 6px 50px 6px 50px; transform: rotate(12deg); }
+.leaf-right { left: 81px; top: 10px; border-radius: 50px 6px 50px 6px; transform: rotate(-12deg); }
+.pot { position: absolute; width: 126px; height: 106px; background: #ecaa9c; border: 3px solid #af665c; border-radius: 8px 8px 35px 35px; bottom: 0; left: 17px; }
+.rim { position: absolute; height: 24px; left: -10px; right: -10px; top: -8px; background: #f2bdb0; border: 3px solid #af665c; border-radius: 8px; }
+.face { display: flex; justify-content: space-between; width: 47px; margin: 37px auto 0; }
+.eye { width: 7px; height: 10px; background: #533d35; border-radius: 50%; }
+.smile { width: 19px; height: 12px; border: 3px solid #533d35; border-top: 0; border-radius: 0 0 20px 20px; margin: 0 auto; }
+.cheek { position: absolute; top: 49px; width: 15px; height: 8px; border-radius: 50%; background: #dc857f; }
+.cheek-left { left: 22px; } .cheek-right { right: 22px; }
+.ground { position: absolute; bottom: 0; left: 15%; width: 70%; height: 10px; border-radius: 50%; background: #dbe6cc; }
+.sparkle { position: absolute; color: #b38820; font-size: 2rem; }
+.sparkle-one { left: 16%; top: 42px; } .sparkle-two { right: 15%; top: 96px; }
+.message { min-height: 3em; margin: 12px 0 22px; }
+.name-form { margin-top: 18px; text-align: left; }
+.name-form label { display: block; margin-bottom: 8px; font-size: .875rem; font-weight: bold; }
+.name-controls { display: flex; flex-wrap: wrap; gap: 8px; }
+.name-controls input {
+  flex: 2 1 140px; min-width: 0; width: 100%; padding: 12px;
+  border: 2px solid #d4e2cb; border-radius: 14px;
+  background: #fffef8; color: #294735; font: inherit;
+}
+.name-controls button { flex: 1 0 auto; background: #e7eddc; border-color: #b8ccaa; }
+.name-controls input:focus-visible { outline: 3px solid #294735; outline-offset: 3px; }
+#plant-name, #intro-name, #loading-message { overflow-wrap: anywhere; }
+.meter-label { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 10px; }
+progress { display: block; width: 100%; height: 16px; border: 0; border-radius: 20px; overflow: hidden; background: #e7eddc; accent-color: #64964b; }
+progress::-webkit-progress-bar { background: #e7eddc; border-radius: 20px; }
+progress::-webkit-progress-value { background: #64964b; border-radius: 20px; transition: width .3s; }
+progress::-moz-progress-bar { background: #64964b; border-radius: 20px; }
+.actions { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+button { flex: 1; padding: 15px 10px; border: 2px solid #b5d1d9; border-radius: 14px; background: #e0f1f5; color: #294735; font: bold 1rem "Trebuchet MS", sans-serif; cursor: pointer; }
+#sunshine { background: #fff0bb; border-color: #e8cd75; }
+button:hover { filter: brightness(.96); transform: translateY(-2px); }
+button:active { transform: translateY(1px); }
+button:focus-visible { outline: 3px solid #294735; outline-offset: 4px; }
+.hint { font-size: .875rem; color: #5c7056; margin: 22px 0 0; }
+.wiggle { animation: wiggle .5s ease-in-out; }
+@keyframes wiggle { 25% { transform: rotate(-6deg); } 75% { transform: rotate(6deg); } }
+@media (max-width: 380px) { body { padding: 12px; } .pet-card { padding: 24px 18px; } h1 { font-size: 2rem; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* The separate naming page. */
+.welcome-sprout { font-size: 5rem; margin: 28px 0 10px; }
+.naming-card h1 { font-size: 2rem; }
+.naming-card .name-controls { flex-direction: column; }
+.naming-card .name-controls input { flex: auto; }
+.naming-card .name-controls button { margin-top: 6px; }
+/* Study Sprout assignment tracker */
+.assignments {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #e8ddcb;
+  text-align: left;
+}
+
+.assignments h2 {
+  text-align: center;
+  margin: 18px 0;
+}
+
+.assignments > p {
+  text-align: center;
+  color: #62564c;
+}
+
+#assignment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#assignment-form label {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+#assignment-form input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #d8d0c4;
+  border-radius: 12px;
+  background: #fffef8;
+  font: inherit;
+  color: #62564c;
+}
+
+#assignment-form button {
+  margin-top: 12px;
+  background: #a6b49a;
+  border-color: #879c7a;
+  color: #fff;
+}
+
+#assignment-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}

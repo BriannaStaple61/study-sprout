@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Give your new little plant friend a name.">
+ <title>Study Sprout | Name Your Plant</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="name.js" defer></script>
+</head>
+<body>
+  <!-- JavaScript briefly shows this welcome screen when the page opens. -->
+  <div id="loading-screen" class="loading-screen" role="status" hidden>
+    <div class="loading-content">
+      <div class="loading-sprout" aria-hidden="true"><span class="loading-stem"></span><span class="loading-leaf loading-leaf-left"></span><span class="loading-leaf loading-leaf-right"></span><span class="loading-pot">◡</span></div>
+      <p class="loading-brand">Study Sprout</p>
+      <p id="loading-message">Welcome to Study Sprout</p>
+      <p class="loading-caption">Getting your cozy study space ready</p>
+      <div class="loading-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <main id="naming-screen" class="pet-card naming-card">
+<p class="eyebrow">WELCOME TO STUDY SPROUT 🌱</p>
+    <div class="welcome-sprout" aria-hidden="true">🌱</div>
+    <h1>Hello, proclastnator!!</h1>
+    <p>Meet your new study buddy! Complete assignments, stay motivated, and watch your little plant grow happier. 🌿</p>
+    <form id="name-form" class="name-form" action="plant.html" method="get">
+      <label for="name-input">Your plant’s name</label>
+      <div class="name-controls">
+        <input id="name-input" name="name" type="text" maxlength="24" placeholder="e.g. Clover" required autocomplete="off">
+        <button type="submit">Start Growing 🌱</button>
+      </div>
+    </form>
+    <p class="hint">Grow your plant. Grow your progress. 🤎</p>
+  </main>
+</body>
+</html>

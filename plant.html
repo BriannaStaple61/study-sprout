@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A little plant friend to water and give sunshine.">
+<title>Study Sprout | My Study Buddy</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="pet-card">
+    <p class="eyebrow">YOUR COZY STUDY COMPANION 🌱</p>
+    <h1>Study Sprout</h1>
+    <p>Meet <span id="intro-name">Sprout</span>. Your little study buddy is here to cheer you on!</p>
+
+    <!-- Our plant is made with CSS, so no pictures are needed. -->
+    <div class="garden" role="img" aria-label="A smiling green plant in a pink flowerpot">
+      <span class="sparkle sparkle-one">✦</span>
+      <span class="sparkle sparkle-two">✧</span>
+      <div class="plant" id="plant">
+        <div class="stem"></div>
+        <div class="leaf leaf-left"></div>
+        <div class="leaf leaf-right"></div>
+        <div class="pot">
+          <div class="rim"></div>
+          <div class="face"><span class="eye"></span><span class="eye"></span></div>
+          <div class="smile"></div>
+          <span class="cheek cheek-left"></span><span class="cheek cheek-right"></span>
+        </div>
+      </div>
+      <div class="ground"></div>
+    </div>
+
+    <h2><span id="plant-name">Sprout</span> <span aria-hidden="true">🌱</span></h2>
+    <p id="message" class="message" aria-live="polite">Ready to tackle your assignments? Let's grow together! 🌱</p>
+    <div class="meter-label"><label for="happiness">Happiness</label><span id="score">0%</span></div>
+    <progress id="happiness" max="100" value="0">0%</progress>
+    <section class="assignments">
+  <h2>My Assignments 📚</h2>
+  <p>Add your schoolwork and help your plant grow!</p>
+
+  <form id="assignment-form">
+    <label for="assignment-name">Assignment Name</label>
+    <input id="assignment-name" type="text"
+           placeholder="e.g. Python Homework" required>
+
+    <label for="class-name">Class</label>
+    <input id="class-name" type="text"
+           placeholder="e.g. CMP 343" required>
+
+    <label for="due-date">Due Date</label>
+    <input id="due-date" type="date" required>
+
+    <button type="submit">+ Add Assignment 🌱</button>
+  </form>
+
+  <h2>My To-Do List</h2>
+  <ul id="assignment-list"></ul>
+</section>
+    <p class="hint">A tiny moment of care, just for you.</p>
+  </main>
+</body>
+</html>
